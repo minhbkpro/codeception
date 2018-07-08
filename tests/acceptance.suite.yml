@@ -6,7 +6,21 @@
 
 actor: AcceptanceTester
 modules:
-    enabled:
-        - PhpBrowser:
-            url: http://localhost/myapp
-        - \Helper\Acceptance
+  enabled:
+    - WebDriver:
+      # this "nginx" is the name of nginx container where website running,
+      # you can replate with your website url, ex: http://google.com.
+      url: http://nginx
+
+      # this "chrome" is not chrome contaienr's name, but to indicate that we use chrome browser for test,
+      # will result as codeception will required selenium and chrome driver for test.
+      browser: chrome
+
+      # this "selenium" is the name of selenium container where selenium server running,
+      # you can change it to selenium ip address instead, such as 0.0.0.0 (osx) or 192.168.99.100 (window).
+      host: selenium
+
+      # this is default port of selenium server.
+      port: 4444
+
+    - \Helper\Acceptance
