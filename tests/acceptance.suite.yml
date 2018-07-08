@@ -7,7 +7,10 @@
 actor: AcceptanceTester
 modules:
   enabled:
-    - WebDriver:
+    - WebDriver
+    - \Helper\Acceptance
+  config:
+    WebDriver:
       # this "nginx" is the name of nginx container where website running,
       # you can replate with your website url, ex: http://google.com.
       url: http://nginx
@@ -22,5 +25,3 @@ modules:
 
       # this is default port of selenium server.
       port: 4444
-
-    - \Helper\Acceptance
