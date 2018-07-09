@@ -1,5 +1,11 @@
 # Run
 
+```
+docker-compose up -d
+```
+
+# Commands
+
 Run all test:
 ```
 docker exec -it utils codecept run

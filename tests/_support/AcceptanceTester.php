@@ -1,5 +1,7 @@
 <?php
 
+require 'vendor/autoload.php';
+use Illuminate\Database\Capsule\Manager as Capsule;
 
 /**
  * Inherited Methods
@@ -23,4 +25,19 @@ class AcceptanceTester extends \Codeception\Actor
    /**
     * Define custom actions here
     */
+    function init() {
+        $capsule = new Capsule;
+        $capsule->addConnection([
+            'driver'    => 'mysql',
+            'host'      => 'mysql',
+            'database'  => 'dev',
+            'username'  => 'dev',
+            'password'  => 'dev',
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+        ]);
+        $capsule->setAsGlobal();
+        $capsule->bootEloquent();
+    }
 }
