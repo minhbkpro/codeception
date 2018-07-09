@@ -25,14 +25,20 @@ class AcceptanceTester extends \Codeception\Actor
    /**
     * Define custom actions here
     */
-    function init() {
+    function init()
+    {
+        // load env
+        $dotenv = new Dotenv\Dotenv('.');
+        $dotenv->load();
+
+        // init eloquent
         $capsule = new Capsule;
         $capsule->addConnection([
             'driver'    => 'mysql',
-            'host'      => 'mysql',
-            'database'  => 'dev',
-            'username'  => 'dev',
-            'password'  => 'dev',
+            'host'      => getenv('MYSQL_HOST'),
+            'database'  => getenv('MYSQL_DATABASE'),
+            'username'  => getenv('MYSQL_USER'),
+            'password'  => getenv('MYSQL_PASSWORD'),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
