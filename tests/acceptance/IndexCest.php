@@ -17,6 +17,6 @@ class IndexCest
     public function tryToTest(AcceptanceTester $I)
     {
         $I->amOnPage('/');
-        $I->see('PHP Version 7.2.7');
+        $I->see('ログイン');
     }
 }
