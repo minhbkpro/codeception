@@ -1,3 +1,15 @@
+# Overview
+
+This repo is not about install codeception along with your project, but to write and run acceptance test separately.
+
+We use laravel for easily setup ORM, factory.
+
+# Required
+
+1. Docker
+2. Docker
+3. Docker
+
 # Setup
 
 1. Clone repo.
