@@ -17,7 +17,7 @@ We use laravel for easily setup ORM, factory.
 3. Run docker by ```docker-compose up -d```, find utils_container_name in console logs.
 4. Install composer ```docker exec -it utils_container_name composer install```.
 5. Generate models ```docker exec -it utils_container_name php artisan code:models```.
-> If your get any error, try to download generator package from "master" branch at https://github.com/reliese/laravel and replace package content in vendor folder.
+> If your get any error, try to download generator package from "master" branch at https://github.com/reliese/laravel and replace package content in vendor folder. They fixed errors but do not released yet.
 6. Create factory, docs here https://laravel.com/docs/5.6/database-testing#writing-factories.
 > Note that our models not in ```App\``` but in ```App\Models\```.
 
