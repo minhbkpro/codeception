@@ -8,16 +8,13 @@ actor: AcceptanceTester
 modules:
   enabled:
     - WebDriver
+    - Laravel5
     - \Helper\Acceptance
   config:
     WebDriver:
-      # this "nginx" is the name of nginx container where website running,
-      # you can replate with your website url, ex: http://google.com.
       url: https://www.google.co.jp/
-
-      # this "chrome" is not chrome contaienr's name, but to indicate that we use chrome browser for test,
-      # will result as codeception will required selenium and chrome driver for test.
       browser: chrome
-
       host: '%SELENIUM_HOST%'
       port: '%SELENIUM_PORT%'
+    Laravel5:
+      part: ORM
