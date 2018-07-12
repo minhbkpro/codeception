@@ -9,6 +9,7 @@ modules:
   enabled:
     - WebDriver
     - Laravel5
+    - Db
     - \Helper\Acceptance
   config:
     WebDriver:
@@ -18,3 +19,10 @@ modules:
       port: '%SELENIUM_PORT%'
     Laravel5:
       part: ORM
+    Db:
+      dsn: 'mysql:host=%DB_HOST%;port=%DB_PORT%;dbname=%DB_DATABASE%'
+      user: '%DB_USERNAME%'
+      password: '%DB_PASSWORD%'
+      dump: tests/_data/dump.sql
+      cleanup: true # run populator before each test
+      populate: true # run populator before all test
