@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Database\Capsule\Manager as Capsule;
+use App\Models\User;
 
 class IndexCest
 {
@@ -16,6 +16,15 @@ class IndexCest
     // tests
     public function tryToTest(AcceptanceTester $I)
     {
+        // use factories example
+        $user = factory(User::class)->make(); // make user object
+        $user = factory(User::class)->create(); // make user object and insert to database
+
+        // use Eloquent example
+        $user = User::orderBy('id', 'desc')->first();
+
+        var_dump($user->toArray());
+
         $I->amOnPage('/');
         $I->see('ログイン');
     }
